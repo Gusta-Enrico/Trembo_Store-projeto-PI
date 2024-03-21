@@ -74,9 +74,9 @@ public class UserController {
             Optional<User> userData = userRepository.findById(id);
             if(userData.isPresent()){
                 User userUpdated = userData.get();
-                userUpdated.setEmail(user.getEmail());
                 userUpdated.setName(user.getName());
                 userUpdated.setPassword(user.getPassword());
+                userUpdated.setGroup(user.getGroup());
 
                 User userobj = userRepository.save(userUpdated);
                 return new ResponseEntity<>(userobj, HttpStatus.CREATED);
