@@ -19,28 +19,27 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    /*
+
     @GetMapping("/getAllUsers")
-    public ResponseEntity<List<User>> getAllUsers(){
-        //Não estou achando o erro
+    public ResponseEntity<ArrayList<User>> getAllUsers(){
         try {
-            List<User> userList = new ArrayList<>();
-            UserRepository.findAll().forEach(userList::add);
+            ArrayList<User> userList = new ArrayList<>();
+            userRepository.findAll().forEach(userList::add);
 
             if (userList.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
 
-            return new ResponseEntity<>(userList, HttpStatus.OK)
+            return new ResponseEntity<>(userList, HttpStatus.OK);
 
         }catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-     */
 
-    @GetMapping("/getUserById")
+
+    @GetMapping("/getUserByid")
     public ResponseEntity<User> getUserById(@PathVariable Integer id){
         Optional<User> userObj = userRepository.findById(id);
         if (userObj.isPresent())
@@ -48,6 +47,16 @@ public class UserController {
         else
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @GetMapping("/user/name/{name}")
+    public ResponseEntity<ArrayList<User>> getUserByName(@PathVariable String name) {
+        ArrayList<User> users = userRepository.findByName(name);
+        if (!users.isEmpty())
+            return new ResponseEntity<>(users, HttpStatus.OK);
+        else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
 
     @PostMapping("/addUser")
     public ResponseEntity<User> addUser(@RequestBody User user){
@@ -61,7 +70,7 @@ public class UserController {
 
     @PostMapping("/updateUser/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User user){
-        try(){
+        try{
             Optional<User> userData = userRepository.findById(id);
             if(userData.isPresent()){
                 User userUpdated = userData.get();
