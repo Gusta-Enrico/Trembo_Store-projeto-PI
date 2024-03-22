@@ -23,7 +23,6 @@ input{
     border: none;
     outline: 15px;
     font-size: 15px;
-    position: relative;
    
  
 }
@@ -32,14 +31,9 @@ button{
 background-color: grey;
 border: none;
 padding: 15px;
-width: 100%;
 border-radius: 10px;
 color: black;
 font-size: 15px;
-}
-
-button:hover{
-    background-color: red;
 }
 
 tr{
@@ -48,4 +42,30 @@ tr{
     font-size: 15px;
 }
 
+button:hover{
+    background-color: red;
+}
+
+.Btn-lupa{
+   width: 5%;
+   height: 60px;
+   background-color: transparent;
+   transition: .3s;
+}
+
+
+
+.Btn-Consultar{
+    width: 50%;
+   height: 50px;
+   margin: auto;
+   display: block;
+}
+
+.Btn-mais{
+    width: 50%;
+   height: 50px;
+   margin: auto;
+   display: block;
+}
 
