@@ -39,3 +39,10 @@ font-size: 15px;
 button:hover{
     background-color: red;
 }
+
+.logo{
+    max-width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

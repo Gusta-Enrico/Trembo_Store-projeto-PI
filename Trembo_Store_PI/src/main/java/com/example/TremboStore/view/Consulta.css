@@ -48,3 +48,24 @@ tr{
     border: 5px solid white;
     padding: 8px;
 }
+
+.cmpPesquisa{
+    display: flex;
+    justify-content: center;
+    align-items:normal
+}
+
+.logo{
+    max-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-buscar {
+    border:none;
+    float:left;
+    height:32px;
+    border-radius:0 7px 7px 0;
+    width:70px;
+}

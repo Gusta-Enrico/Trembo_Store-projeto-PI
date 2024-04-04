@@ -67,3 +67,10 @@ button:hover{
     color: #aaa;
     background: #eee;
 }
+
+.logo{
+    max-width: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

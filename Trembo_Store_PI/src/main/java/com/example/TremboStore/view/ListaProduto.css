@@ -69,3 +69,11 @@ button:hover{
    display: block;
 }
 
+.logo{
+    max-width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float:right;
+}
+
