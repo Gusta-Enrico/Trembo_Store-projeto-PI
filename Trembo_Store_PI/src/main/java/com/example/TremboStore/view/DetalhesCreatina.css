@@ -39,4 +39,12 @@ Button{
     border-radius: 10px;
     color: black;
     font-size: 15px;
-    }
+}
+
+.logo{
+    max-width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float:right
+}
