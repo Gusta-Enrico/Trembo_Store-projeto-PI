@@ -1,18 +1,18 @@
 package br.com.trembostore.trembostore.Model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 
+@Entity
 public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private int id;
     @Column(columnDefinition = "TEXT")
     private String nome;
     private String sobrenome;

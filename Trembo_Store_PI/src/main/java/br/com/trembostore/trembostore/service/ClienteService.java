@@ -2,7 +2,7 @@ package br.com.trembostore.trembostore.service;
 
 import br.com.trembostore.trembostore.Model.Cliente;
 import br.com.trembostore.trembostore.repository.RepositorioCliente;
-import br.com.trembostore.trembostore.repository.RepositorioProduto;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
