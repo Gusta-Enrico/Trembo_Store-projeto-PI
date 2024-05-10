@@ -21,4 +21,8 @@ public class UsuarioService {
         this.repositorioUsuario.save(usuario);
     }
 
+    public Usuario verificarCredenciais(String email, String password) {
+        return repositorioUsuario.findByEmailAndPassword(email, password);
+    }
+
 }

@@ -17,13 +17,13 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    @PostMapping("/cadastro")
+    @PostMapping("/cadastroCli")
     public ModelAndView salvarCliente(@ModelAttribute("dados")Cliente dadosRecebidos, RedirectAttributes redirAttr){
 
-        ModelAndView mv = new ModelAndView("redirect:/####.html");
+        ModelAndView mv = new ModelAndView("redirect:/homePage.html");
 
         redirAttr.addFlashAttribute("dados", dadosRecebidos);
-        System.out.println("Cadastro Realizado" + dadosRecebidos.getCPF());
+        System.out.println("Cadastro Realizado" + dadosRecebidos.getcpf());
 
         clienteService.salvarCliente(dadosRecebidos);
 
@@ -31,6 +31,6 @@ public class ClienteController {
     }
 
     public void setClienteService(ClienteService service){
-
+        this.clienteService = service;
     }
 }

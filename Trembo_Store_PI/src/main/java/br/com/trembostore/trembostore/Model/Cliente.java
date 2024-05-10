@@ -5,22 +5,24 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 
 @Entity
+@Table(name = "clientes")
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(columnDefinition = "TEXT")
     private String nome;
     private String sobrenome;
-    private String CPF;
-    private String emailCli;
+    private String cpf;
+    private String email_cli;
     private String [] endereco; //Array para guardar (Rua, Num, Bairro e Cidade)
     private String data_Nascimento;
-    private String senha;
+    private String password;
     private String genero;
 
     public String getNome() {
@@ -39,20 +41,20 @@ public class Cliente {
         this.sobrenome = sobrenome;
     }
 
-    public String getCPF() {
-        return CPF;
+    public String getcpf() {
+        return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setcpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public String getEmailCli() {
-        return emailCli;
+    public String getEmail_cli() {
+        return email_cli;
     }
 
-    public void setEmailCli(String emailCli) {
-        this.emailCli = emailCli;
+    public void setEmail_cli(String emailCli) {
+        this.email_cli = emailCli;
     }
 
     public String[] getEndereco() {
@@ -71,12 +73,12 @@ public class Cliente {
         this.data_Nascimento = data_Nascimento;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setPassord(String password) {
+        this.password = password;
     }
 
     public String getGenero() {

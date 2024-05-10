@@ -7,5 +7,5 @@ import br.com.trembostore.trembostore.Model.Usuario;
 
 @Repository
 public interface RepositorioUsuario extends JpaRepository<Usuario, Long>{
-
+    Usuario findByEmailAndPassword(String email, String password);
 }
