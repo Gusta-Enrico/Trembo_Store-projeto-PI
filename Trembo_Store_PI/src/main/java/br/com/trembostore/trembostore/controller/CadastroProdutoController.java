@@ -51,10 +51,19 @@ public class CadastroProdutoController {
         this.produtoService = service;
     }
 
+    /** Comentado para não perder. Testar o novo
     @GetMapping({"", "/"})
     public String listaProdutos (Model model){
         List<Produtos> produtos = repositorioProduto.findAll();
         model.addAttribute("produtos", produtos);
         return "listaProdutos.html";
+    }
+    */
+
+    @GetMapping({"", "/"})
+    public String listaProdutos(Model model){
+        List<Produtos> produtos = produtoService.listarProdutos();
+        model.addAttribute("produtos", produtos);
+        return "produtos";
     }
 }

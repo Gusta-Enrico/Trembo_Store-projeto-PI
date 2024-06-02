@@ -34,35 +34,3 @@ public class ProdutoService {
 
 
 }
-@RestController
-class TremboStoreController {
-
-    @GetMapping("/nav-links")
-    public Map<String, String> getNavLinks() {
-        Map<String, String> navLinks = new HashMap<>();
-        navLinks.put("Home", "/");
-        navLinks.put("Produtos", "/produtos");
-        navLinks.put("Sobre Nós", "/sobre");
-        navLinks.put("Contato", "/contato");
-        return navLinks;
-    }
-
-    @GetMapping("/popular-categories")
-    public Map<String, String> getPopularCategories() {
-        Map<String, String> popularCategories = new HashMap<>();
-        popularCategories.put("Proteínas", "/produtos/categoria/proteinas");
-        popularCategories.put("Aminoácidos", "/produtos/categoria/aminoacidos");
-        popularCategories.put("Vitaminas", "/produtos/categoria/vitaminas");
-        return popularCategories;
-    }
-
-    @GetMapping("/featured-products")
-    public Map<String, String> getFeaturedProducts() {
-        Map<String, String> featuredProducts = new HashMap<>();
-        featuredProducts.put("Whey Protein 1", "/produtos/1");
-        featuredProducts.put("Whey Protein 2", "/produtos/2");
-        featuredProducts.put("Whey Protein 3", "/produtos/3");
-        featuredProducts.put("Whey Protein 4", "/produtos/4");
-        return featuredProducts;
-    }
-}

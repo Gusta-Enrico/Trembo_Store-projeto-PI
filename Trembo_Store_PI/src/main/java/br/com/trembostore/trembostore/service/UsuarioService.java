@@ -28,8 +28,16 @@ public class UsuarioService {
         return repositorioUsuario.findByEmailAndPassword(email, password);
     }
 
+    public void deletarFuncionario(Long id) {
+        repositorioUsuario.deleteById(id);
+    }
+
     public List<Usuario> listarUsuarios() {
         return repositorioUsuario.findAll();
+    }
+
+    public Usuario buscarUsuarioPorId (long id){
+        return repositorioUsuario.findById(id).orElse(null);
     }
 
 }

@@ -22,7 +22,7 @@ public class Usuario {
     private String password;
     private String cpf;
     private String cargo;
-    
+    private String status;
     
     
     public String getNome() {
@@ -56,5 +56,11 @@ public class Usuario {
         this.cargo = cargo;
     }
 
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

@@ -35,12 +35,5 @@ public class ClienteController {
         this.clienteService = service;
     }
 
-    @Controller
-    class HomeController {
 
-        @GetMapping("/homePage")
-        public String index() {
-            return "homePage";
-        }
-    }
 }
