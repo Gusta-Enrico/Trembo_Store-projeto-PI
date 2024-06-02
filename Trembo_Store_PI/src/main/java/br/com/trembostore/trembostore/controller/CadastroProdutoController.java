@@ -26,10 +26,16 @@ public class CadastroProdutoController {
 
     private RepositorioProduto repositorioProduto;
 
-    @PostMapping("/cadastroProduto")
-    public ModelAndView salvarUsuario(@ModelAttribute("dados") Produtos dadosRecebidos,RedirectAttributes redirAttr) {
-        
-        ModelAndView mv = new ModelAndView("redirect:/cadastrarProduto.html");
+    @GetMapping("/produto/cadastroProduto")
+    public String mostrarFormularioDeCadastro(Model model) {
+        model.addAttribute("produto", new Produtos());
+        return "cadastroProduto";
+    }
+
+    @PostMapping("/produto/cadastroProduto")
+    public ModelAndView salvarProduto(@ModelAttribute("dados") Produtos dadosRecebidos,RedirectAttributes redirAttr) {
+
+        ModelAndView mv = new ModelAndView("redirect:/produto/cadastrarProduto.html");
 
         redirAttr.addFlashAttribute("dados", dadosRecebidos);
         System.out.println("cadastrado com sucesso" + dadosRecebidos.getId());
@@ -51,8 +57,4 @@ public class CadastroProdutoController {
         model.addAttribute("produtos", produtos);
         return "listaProdutos.html";
     }
-
-
-
-
 }

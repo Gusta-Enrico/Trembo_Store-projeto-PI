@@ -11,19 +11,21 @@
 	<groupId>br.com.trembostore</groupId>
 	<artifactId>trembostore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<name>trembostore</name>
 	<description>Demo project for Spring Boot</description>
+
+
+
 	<properties>
 		<java.version>21</java.version>
 	</properties>
-	<dependencies>
 
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		
-
 
 		<dependency>
 			<groupId>mysql</groupId>

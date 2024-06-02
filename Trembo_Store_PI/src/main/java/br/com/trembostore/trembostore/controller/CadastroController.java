@@ -28,7 +28,7 @@ public class CadastroController {
 
     @PostMapping("/cadastro")
     public ModelAndView salvarUsuario(@ModelAttribute("dados") Usuario dadosRecebidos,RedirectAttributes redirAttr) {
-        
+
         ModelAndView mv = new ModelAndView("redirect:/loginfuncionario.html");
 
         redirAttr.addFlashAttribute("dados", dadosRecebidos);
@@ -49,11 +49,12 @@ public class CadastroController {
     public String getMethodName(@RequestParam String param) {
         return new String();
     }
-    
+
     public String listaFuncionario (Model model) {
         List<Usuario> usuarios = repositorioUsuario.findAll();
         model.addAttribute("usuarios", usuarios);
         return "listaUsuarios.html";
     }
+
 
 }

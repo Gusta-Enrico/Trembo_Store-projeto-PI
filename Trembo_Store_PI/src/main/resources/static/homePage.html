@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trembo-Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Trembo-Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/produtos">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sobre">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contato">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Bem-vindo à Trembo-Store!</h1>
+        <p class="lead">Encontre os melhores suplementos para atingir seus objetivos de fitness.</p>
+        <hr class="my-4">
+        <p>Explore nossa vasta gama de produtos e ofertas exclusivas.</p>
+        <a class="btn btn-primary btn-lg" href="/produtos" role="button">Ver Produtos</a>
+    </div>
+
+    <h2 class="mt-5">Categorias Populares</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://static.netshoes.com.br/produtos/whey-protein-100-pure-whey-900g-probiotica/63/168-9257-963/168-9257-963_zoom1.jpg?ts=1617791920" class="card-img-top" alt="Proteínas">
+                <div class="card-body">
+                    <h5 class="card-title">Proteínas</h5>
+                    <p class="card-text">Descubra nossas melhores ofertas em proteínas.</p>
+                    <a href="/produtos/categoria/proteinas" class="btn btn-primary">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://static.clube.netshoes.com.br/produtos/whey-protein-100-super-pure-907-g-body-size-pote-integralmedica/99/252-0998-799/252-0998-799_zoom1.jpg?ts=1587555441&" class="card-img-top" alt="Aminoácidos">
+                <div class="card-body">
+                    <h5 class="card-title">Aminoácidos</h5>
+                    <p class="card-text">Explore nossa seleção de aminoácidos essenciais.</p>
+                    <a href="/produtos/categoria/aminoacidos" class="btn btn-primary">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://lojamaxtitanium.vtexassets.com/assets/vtex.file-manager-graphql/images/bf5d89a3-cb53-44e1-aa36-5f0458ac2d88___3418039692d332bb6f5b364e1edfec14.png" class="card-img-top" alt="Vitaminas">
+                <div class="card-body">
+                    <h5 class="card-title">Vitaminas</h5>
+                    <p class="card-text">Confira nossa linha completa de vitaminas.</p>
+                    <a href="/produtos/categoria/vitaminas" class="btn btn-primary">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mt-5">Produtos em Destaque</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://cf.shopee.com.br/file/a16dded696ecc9792ff4b83fcd22d5bd" class="card-img-top" alt="Whey Protein 1">
+                <div class="card-body">
+                    <h5 class="card-title">Whey Protein 1</h5>
+                    <p class="card-text">Descrição breve do produto.</p>
+                    <a href="/produtos/1" class="btn btn-primary">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://static.netshoes.com.br/produtos/whey-protein-isolado-wpc-900g-pretorian/62/D36-1554-962/D36-1554-962_zoom3.jpg?ts=1623953512&ims=1088x" class="card-img-top" alt="Whey Protein 2">
+                <div class="card-body">
+                    <h5 class="card-title">Whey Protein 2</h5>
+                    <p class="card-text">Descrição breve do produto.</p>
+                    <a href="/produtos/2" class="btn btn-primary">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="Whey Protein 3">
+                <div class="card-body">
+                    <h5 class="card-title">Whey Protein 3</h5>
+                    <p class="card-text">Descrição breve do produto.</p>
+                    <a href="/produtos/3" class="btn btn-primary">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_691244-MLB48859176819_012022-F.jpg" class="card-img-top" alt="Whey Protein 4">
+                <div class="card-body">
+                    <h5 class="card-title">Whey Protein 4</h5>
+                    <p class="card-text">Descrição breve do produto.</p>
+                    <a href="/produtos/4" class="btn btn-primary">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2024 Loja de Suplementos de Academia. Todos os direitos reservados.
+    </div>
+</footer>
+</body>
+</html>
