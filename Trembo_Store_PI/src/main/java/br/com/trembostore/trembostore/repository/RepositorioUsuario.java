@@ -5,7 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import br.com.trembostore.trembostore.Model.Usuario;
 
+import java.util.List;
+
 @Repository
 public interface RepositorioUsuario extends JpaRepository<Usuario, Long>{
     Usuario findByEmailAndPassword(String email, String password);
+
+    Usuario findByEmail(String email);
 }

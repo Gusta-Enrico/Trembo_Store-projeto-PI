@@ -1,6 +1,6 @@
 package br.com.trembostore.trembostore.service;
 
-import br.com.trembostore.trembostore.Model.Produtos;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,32 +12,57 @@ import java.util.List;
 @Service
 public class UsuarioService {
     
-
+    @Autowired                      
     private RepositorioUsuario repositorioUsuario;
 
-    @Autowired
-    public UsuarioService(RepositorioUsuario repositorioUsuario) {
-        this.repositorioUsuario = repositorioUsuario;
-    }
+   public List<Usuario> getAllUsuarios(){
+       return repositorioUsuario.findAll();
+   }
 
-    public void salvarUsuario(Usuario usuario) {
-        this.repositorioUsuario.save(usuario);
-    }
+   public Usuario getUserById(Long id){
+       return repositorioUsuario.findById(id).orElse(null);
+   }
 
-    public Usuario verificarCredenciais(String email, String password) {
-        return repositorioUsuario.findByEmailAndPassword(email, password);
-    }
+   public Usuario createUsuario(Usuario usuario){
+       return repositorioUsuario.save(usuario);
+   }
 
-    public void deletarFuncionario(Long id) {
-        repositorioUsuario.deleteById(id);
-    }
+   public Usuario updateUsuario(Long id, Usuario usuario){
+       Usuario usuarioExistente = getUserById(id);
+       if (usuarioExistente != null){
+           usuarioExistente.setNome(usuario.getNome());
+           usuarioExistente.setEmail(usuario.getEmail());
+           usuarioExistente.setCpf(usuario.getCpf());
+           usuarioExistente.setSenha(usuario.getSenha());
+           usuarioExistente.setConfirmarSenha(usuario.getConfirmarSenha());
+           usuarioExistente.setCargo(usuario.getCargo());
+           usuarioExistente.setStatus(usuario.getStatus());
+           return repositorioUsuario.save(usuarioExistente);
+       }
+       return null;
+   }
 
-    public List<Usuario> listarUsuarios() {
-        return repositorioUsuario.findAll();
-    }
+   public String deleteUsuario(Long id){
+       Usuario usuarioExistente = getUserById(id);
+       if (usuarioExistente != null){
+           usuarioExistente.setStatus("Deletado");
+           repositorioUsuario.save(usuarioExistente);
+           return "Usuario com Id" + id + " foi deletado";
+       }
+       return "Usuario com id " + "não foi encontrado";
+   }
 
-    public Usuario buscarUsuarioPorId (long id){
-        return repositorioUsuario.findById(id).orElse(null);
-    }
+   public Usuario updateStatusUsuario(Long id, String status){
+       Usuario usuarioExistente = getUserById(id);
+       if (usuarioExistente != null){
+           usuarioExistente.setStatus(status);
+           return repositorioUsuario.save(usuarioExistente);
+       }
+       return null;
+   }
 
+   public Usuario findByEmail(String email){
+       return repositorioUsuario.findByEmail(email);
+   }
+   
 }

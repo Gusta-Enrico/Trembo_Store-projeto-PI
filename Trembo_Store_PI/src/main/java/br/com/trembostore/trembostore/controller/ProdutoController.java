@@ -1,6 +1,5 @@
 package br.com.trembostore.trembostore.controller;
 
-import br.com.trembostore.trembostore.Model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +18,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/produto")
-public class CadastroProdutoController {
+public class ProdutoController {
 
     @Autowired
     private ProdutoService produtoService;
