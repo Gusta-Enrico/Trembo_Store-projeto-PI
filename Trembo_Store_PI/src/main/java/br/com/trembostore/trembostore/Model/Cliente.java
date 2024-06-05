@@ -1,11 +1,6 @@
 package br.com.trembostore.trembostore.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -15,15 +10,45 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(columnDefinition = "TEXT")
     private String nome;
-    private String sobrenome;
+    @Column(name = "cpf", unique = true)
     private String cpf;
+    @Column(name = "email_cli", unique = true)
     private String email_cli;
-    private String [] endereco; //Array para guardar (Rua, Num, Bairro e Cidade)
     private String data_Nascimento;
-    private String password;
+    private String senha;
     private String genero;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco_entrega_id", referencedColumnName = "id")
+    private EnderecoEntrega enderecoEntrega;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco_faturamento_id", referencedColumnName = "id")
+    private EnderecoFaturamento enderecoFaturamento;
+
+    public Cliente() {
+    }
+
+    public Cliente(int id, String nome, String cpf, String email_cli, String data_Nascimento, String senha, String genero, EnderecoEntrega enderecoEntrega, EnderecoFaturamento enderecoFaturamento) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email_cli = email_cli;
+        this.data_Nascimento = data_Nascimento;
+        this.senha = senha;
+        this.genero = genero;
+        this.enderecoEntrega = enderecoEntrega;
+        this.enderecoFaturamento = enderecoFaturamento;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -33,19 +58,11 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-
-    public String getcpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setcpf(String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -57,14 +74,6 @@ public class Cliente {
         this.email_cli = emailCli;
     }
 
-    public String[] getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String[] endereco) {
-        this.endereco = endereco;
-    }
-
     public String getData_Nascimento() {
         return data_Nascimento;
     }
@@ -73,12 +82,12 @@ public class Cliente {
         this.data_Nascimento = data_Nascimento;
     }
 
-    public String getPassword() {
-        return password;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setPassord(String password) {
-        this.password = password;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getGenero() {
@@ -88,4 +97,23 @@ public class Cliente {
     public void setGenero(String genero) {
         this.genero = genero;
     }
+
+    public EnderecoEntrega getEnderecoEntrega() {
+        return enderecoEntrega;
+    }
+
+    public void setEnderecoEntrega(EnderecoEntrega enderecoEntrega) {
+        this.enderecoEntrega = enderecoEntrega;
+    }
+
+    public EnderecoFaturamento getEnderecoFaturamento() {
+        return enderecoFaturamento;
+    }
+
+    public void setEnderecoFaturamento(EnderecoFaturamento enderecoFaturamento) {
+        this.enderecoFaturamento = enderecoFaturamento;
+    }
+
+
+
 }
