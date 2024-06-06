@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Cadastro de Produto</h1>
+    <h1>Editar Produto</h1>
     <form id="productForm" action="/produto" method="post" enctype="multipart/form-data">
         <div>
         <label for="productName">Nome do Produto:</label>
@@ -56,11 +56,9 @@
     <div>
         <label for="mainImageSelect">Primeira Imagem:</label>
         <select id="mainImageSelect" name="imagem" required>
-            
+            <!-- Opções serão preenchidas dinamicamente via JavaScript -->
         </select>
     </div>
-    <br>
-    <div>
         <label for="productRating">Avaliação:</label>
         <select id="productRating" name="avaliacao" required>
             <option value="1">1</option>
@@ -69,12 +67,9 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-    </div>
-    <br>    
-    <div>
+
         <button type="submit">Salvar</button>
         <button type="button" onclick="cancel()">Cancelar</button>
-    </div>
     </form>
 </div>
 <script src="CadastrarProdutos.js"></script>

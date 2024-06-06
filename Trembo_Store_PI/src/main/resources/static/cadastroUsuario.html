@@ -29,8 +29,11 @@
                 <input type="password" name="confirmar-senha" required>
             </div>
             <div>
-                <label for="cargo">Cargo:</label>
-                <input type="text" th:field="*{cargo}" name="cargo" required>
+                <label for="CargoUsuario">Cargo:</label>
+                    <select id="CargoUsuario" name="cargo" required>
+                        <option value="1">Administrador</option>
+                        <option value="2">Estoquista</option>
+                    </select>
             </div>
             <div>
                 <button type="submit">Cadastrar</button>

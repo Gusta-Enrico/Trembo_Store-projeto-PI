@@ -10,43 +10,34 @@
 <div class="container">
     <h1 class="text-center-my-4">Produtos</h1>
 
-    <a class="btn btn-primary" href="cadastrarProduto.html">Cadastrar Produto</a>
+    <div class="filter-input">
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+    </div>
 
     <table class="tabela">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Marca</th>
-            <th>Descrição</th>
-            <th>Imagem</th>
-            <th>Action</th>
+            <th>| ID |</th>
+            <th>Nome |</th>
+            <th>Qtd de Produtos |</th>
+            <th>Valor |</th>
+            <th>Status |</th>
+            <th>Editar |</th>
+            <th>Alterar Status |</th>
+            <th>Visualizar Produto |</th>
+            <th><button onclick="window.location.href='cadastrarProduto.html'">+</button></th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="produto : ${produtos}">
-            <td th:text="${produto.id}"></td>
-            <td tH:text="${produto.preco}"></td>
-            <td th:text="${produto.marca}"></td>
-            <td th:text="${produto.descricao}"></td>
-            <td th:text="${produto.imagem}"></td>
-            <td th:text="${produto.create.tooString().substring(0,10 )}"></td>
-
-            <td style="white-space: nowrap">
-                <a class="btn btn-primary btn-sm"
-                   th:ref="@{/produtos/edit(id=${produto.id})}">Editar</a>
-                <a class="btn btn-danger btn-sm"
-                   th:ref="@{/produtos/delete(id=${produto.id})}"
-                   onclick="return confirm('Tem certeza?')">Deletar</a>
-            </td>
-        </tr>
+            <tbody id="productTableBody">
+                
+                </tbody>
         </tbody>
     </table>
 
 
 </div>
-
+<script src="ListaProdutos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
