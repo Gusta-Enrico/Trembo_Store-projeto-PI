@@ -96,7 +96,7 @@ public class Cliente {
 
     public void setGenero(String genero) {
         this.genero = genero;
-    }
+    }   
 
     public EnderecoEntrega getEnderecoEntrega() {
         return enderecoEntrega;
